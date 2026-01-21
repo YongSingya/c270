@@ -1,0 +1,20 @@
+<h1>Student List</h1>
+
+<ul>
+  <% student.forEach(s => { %>
+    <li>
+      <strong><%= s.name %></strong> - <%= s.contact %>
+      <a href="/student/<%= s.studentId %>">View</a>
+
+      <form
+        action="/deleteStudent/<%= s.studentId %>"
+        method="POST"
+        style="display:inline;"
+      >
+        <button type="submit">Delete</button>
+      </form>
+    </li>
+  <% }) %>
+</ul>
+
+<a href="/addStudent">Add New Student</a>
