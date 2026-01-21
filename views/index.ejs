@@ -42,7 +42,6 @@
         <thead class="table-dark">
           <tr>
             <th>Student Name</th>
-            <th>Student Image</th>
             <th>DOB</th>
             <th>Contact</th>
             <th>Actions</th>
@@ -55,13 +54,6 @@
                 <a href="/student/<%= student[i].studentId %>">
                   <%= student[i].name %>
                 </a>
-              </td>
-              <td>
-                <img
-                  src="<%= student[i].image %>"
-                  width="70"
-                  class="img-thumbnail"
-                />
               </td>
               <td>
                 <%= new Date(student[i].dob).toLocaleDateString('en-US', {
