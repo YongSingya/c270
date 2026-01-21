@@ -31,7 +31,6 @@
         <% if (student) { %>
             <div>
                 <p><b>Student Name:</b><br> <%= student.name %></p>
-                <p><b>Student Image:</b><br> <img src = "<%= student.image %>" width="20%"></p>
                 <p><b>DOB:</b><br> <%= new Date(student.dob).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: '2-digit' }) %></p>
                 <p><b>Contact:</b><br> <%= student.contact %></p> 
             </div>
