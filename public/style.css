@@ -1,0 +1,45 @@
+/* Global Style */
+body {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Card Styling */
+.card-custom {
+  border-radius: 15px;
+  background: #ffffff;
+  padding: 25px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Navbar */
+.navbar-custom {
+  background: #4b0082;
+}
+
+/* Buttons */
+.btn-custom {
+  background-color: #6a11cb;
+  color: white;
+  border-radius: 30px;
+  padding: 10px 20px;
+  transition: 0.3s;
+}
+
+.btn-custom:hover {
+  background-color: #2575fc;
+  color: white;
+}
+
+/* Footer */
+.footer {
+  background: #4b0082;
+  color: white;
+  padding: 15px;
+  margin-top: 40px;
+  text-align: center;
+}
