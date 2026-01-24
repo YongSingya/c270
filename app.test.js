@@ -1,6 +1,10 @@
 const request = require('supertest');
 const express = require('express');
+const path = require('path');
 const app = require('./app');
+
+// Set the current working directory for the test
+process.chdir(__dirname);
 
 describe('Student List App', () => {
 
