@@ -22,5 +22,11 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+  test:
+    runs-on: ubuntu-latest
+
+    step:
       - name: Run tests
         run: npm test || echo "No tests defined"
+
+  

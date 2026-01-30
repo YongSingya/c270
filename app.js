@@ -56,6 +56,32 @@ app.post('/addStudent', (req, res) => {
   res.redirect('/');
 });
 
+// Show Edit Student form
+app.get("/editStudent/:id", (req, res) => {
+  const studentId = parseInt(req.params.id);
+  const student = students.find((s) => s.studentId === studentId);
+
+  if (!student) {
+    return res.status(404).send("Student not found");
+  }
+
+  res.render("editStudent", { student });
+});
+
+// Handle Edit Student form submission
+app.post("/editStudent/:id", (req, res) => {
+  const studentId = parseInt(req.params.id);
+  const { name, dob, contact } = req.body;
+
+  const idx = students.findIndex((s) => s.studentId === studentId);
+  if (idx === -1) {
+    return res.status(404).send("Student not found");
+  }
+
+  students[idx] = { studentId, name, dob, contact };
+  res.redirect("/");
+});
+
 // Delete a student
 app.post('/deleteStudent/:id', (req, res) => {
   const studentId = parseInt(req.params.id);
