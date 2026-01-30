@@ -2,27 +2,34 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      # Step 1 — Checkout your repository
+      - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Step 2 — Setup Node.js environment (v18)
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: "18"
 
+      # Step 3 — Install project dependencies based on package-lock.json
       - name: Install dependencies
         run: npm ci
 
-      - name: Run tests
-        run: npm test
+      # Step 4 — Verify that app runs without syntax/dependency issues
+      - name: Run build verification
+        run: node -e "require('./app'); console.log('✅ App loaded successfully');"
 
+      # Step 5 — Optional placeholder tests (keeps CI green until you write real ones)
+      - name: Run placeholder test
+        run: npm test
   
