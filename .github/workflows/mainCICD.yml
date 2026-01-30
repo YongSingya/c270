@@ -20,13 +20,9 @@ jobs:
           node-version: '18'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-  test:
-    runs-on: ubuntu-latest
-
-    step:
       - name: Run tests
-        run: npm test || echo "No tests defined"
+        run: npm test
 
   
