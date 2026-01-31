@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,25 +24,3 @@
 
 </body>
 </html>
-=======
-<h1>Student List</h1>
-
-<ul>
-  <% student.forEach(s => { %>
-    <li>
-      <strong><%= s.name %></strong> - <%= s.contact %>
-      <a href="/student/<%= s.studentId %>">View</a>
-
-      <form
-        action="/deleteStudent/<%= s.studentId %>"
-        method="POST"
-        style="display:inline;"
-      >
-        <button type="submit">Delete</button>
-      </form>
-    </li>
-  <% }) %>
-</ul>
-
-<a href="/addStudent">Add New Student</a>
->>>>>>> 1ff5ae9b0da13865bf3dc0c9fa4bd6c8978309c4
