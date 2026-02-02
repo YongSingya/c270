@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Edit Student</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>Edit Student Profile</h1>
+
+  <form action="/editStudent/<%= student.studentId %>" method="POST" enctype="multipart/form-data" class="main-form">
+    <div class="form-group">
+      <label>Full Name:</label>
+      <input type="text" name="name" value="<%= student.name %>" required>
+    </div>
+    
+    <div class="form-group">
+      <label>Date of Birth:</label>
+      <input type="date" name="dob" value="<%= student.dob %>" required>
+    </div>
+    
+    <div class="form-group">
+      <label>Contact Number:</label>
+      <input type="text" name="contact" value="<%= student.contact %>" required>
+    </div>
+
+    <div class="form-group">
+      <label>Current Photo:</label>
+      <% if (student.photo) { %>
+        <img src="/uploads/<%= student.photo %>" class="preview-img">
+      <% } else { %>
+        <p>No photo currently uploaded.</p>
+      <% } %>
+    </div>
+
+    <div class="form-group">
+      <label>Change Photo (Optional):</label>
+      <input type="file" name="studentPhoto" accept="image/*">
+    </div>
+
+    <div class="button-group">
+      <button type="submit" class="btn btn-add">Update Student</button>
+      <a href="/" class="btn btn-back">Cancel</a>
+    </div>
+  </form>
+</body>
+</html>

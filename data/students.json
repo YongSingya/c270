@@ -1,0 +1,16 @@
+[
+  {
+    "studentId": 2,
+    "name": "Peter Tan",
+    "dob": "6565-05-06",
+    "contact": "12345690",
+    "photo": "student-1770039294252.png"
+  },
+  {
+    "studentId": 3,
+    "name": "Min Chu",
+    "dob": "0057-06-05",
+    "contact": "575757575",
+    "photo": "student-1770039261139.png"
+  }
+]
