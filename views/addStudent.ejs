@@ -21,7 +21,7 @@
       <div class="card-custom">
         <h2 class="text-center fw-bold mb-4">Add New Student</h2>
 
-        <form method="POST" action="/addStudent">
+        <form method="POST" action="/addStudent" enctype="multipart/form-data">
           <label class="form-label">Student Name</label>
           <input
             type="text"
@@ -42,12 +42,31 @@
           <input
             type="text"
             name="contact"
-            class="form-control mb-4"
+            class="form-control mb-3"
             required
           />
 
+          <label class="form-label">Profile Icon</label>
+          <div class="mb-3 d-flex align-items-center gap-3">
+            <img id="avatarPreview" src="https://via.placeholder.com/80" class="avatar" alt="Avatar preview">
+            <input type="file" name="avatar" accept="image/*" id="avatarInput" class="form-control-file">
+          </div>
+
           <button class="btn btn-custom w-100">Add Student</button>
         </form>
+
+        <script>
+          const avatarInput = document.getElementById('avatarInput');
+          const avatarPreview = document.getElementById('avatarPreview');
+          avatarInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+              avatarPreview.src = URL.createObjectURL(file);
+            } else {
+              avatarPreview.src = 'https://via.placeholder.com/80';
+            }
+          });
+        </script>
       </div>
     </div>
 

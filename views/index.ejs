@@ -46,6 +46,7 @@
     <table class="table table-hover text-center">
       <thead class="table-dark">
         <tr>
+          <th>Avatar</th>
           <th>Name</th>
           <th>DOB</th>
           <th>Contact</th>
@@ -56,6 +57,10 @@
       <tbody>
         <% students.forEach(s => { %>
           <tr>
+            <td>
+              <img src="<%= s.avatar %>" class="avatar" alt="Avatar">
+            </td>
+
             <td>
               <a href="/student/<%= s.studentId %>" class="fw-bold text-decoration-none">
                 <%= s.name %>

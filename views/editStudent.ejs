@@ -26,6 +26,7 @@
         <form
           method="POST"
           action="/editStudent/<%= student.studentId %>"
+          enctype="multipart/form-data"
         >
           <label class="form-label">Student Name</label>
           <input
@@ -49,13 +50,32 @@
           <input
             type="text"
             name="contact"
-            class="form-control mb-4"
+            class="form-control mb-3"
             value="<%= student.contact %>"
             required
           />
 
+          <label class="form-label">Profile Icon</label>
+          <div class="mb-3 d-flex align-items-center gap-3">
+            <img id="avatarPreview" src="<%= student.avatar %>" class="avatar" alt="Avatar preview">
+            <input type="file" name="avatar" accept="image/*" id="avatarInput" class="form-control-file">
+          </div>
+
           <button class="btn btn-custom w-100">Update Student</button>
         </form>
+
+        <script>
+          const avatarInput = document.getElementById('avatarInput');
+          const avatarPreview = document.getElementById('avatarPreview');
+          avatarInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+              avatarPreview.src = URL.createObjectURL(file);
+            } else {
+              avatarPreview.src = '<%= student.avatar %>';
+            }
+          });
+        </script>
       </div>
     </div>
 
